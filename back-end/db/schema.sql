@@ -3,9 +3,9 @@ CREATE DATABASE keyboards_dev;
 
 \c keyboards_dev;
 
-DROP TABLE IF EXISTS test;
+DROP TABLE IF EXISTS keyboards;
 
-CREATE TABLE test (
+CREATE TABLE keyboards (
     id SERIAL PRIMARY KEY, 
     name TEXT,
     description TEXT,
