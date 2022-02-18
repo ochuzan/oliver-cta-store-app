@@ -1,6 +1,7 @@
 // DEPENDENCIES
 const cors = require("cors");
 const express = require("express");
+const keyboardsController = require("./controllers/keyboardsController.js");
 
 // CONFIGURATION
 const app = express();
@@ -14,19 +15,21 @@ app.get("/", (req, res) => {
   res.send("Hello, world!");
 });
 
+app.use("/keyboards", keyboardsController);
+
 /////////////////////////////////////
 // REMOVE AFTER SUCCESSFUL DEPLOYMENT
 /////////////////////////////////////
 const db = require("./db/dbConfig.js");
 
-app.get("/test", async (req, res) => {
-  try {
-    const allDays = await db.any("SELECT * FROM test");
-    res.json(allDays);
-  } catch (err) {
-    res.json(err);
-  }
-});
+// app.get("/test", async (req, res) => {
+//   try {
+//     const allDays = await db.any("SELECT * FROM test");
+//     res.json(allDays);
+//   } catch (err) {
+//     res.json(err);
+//   }
+// });
 
 /////////////////////////////////////
 // REMOVE AFTER SUCCESSFUL DEPLOYMENT
