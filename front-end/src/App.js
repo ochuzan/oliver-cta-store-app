@@ -1,29 +1,23 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
-const API = process.env.REACT_APP_API_URL;
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import Home from "./components/Home";
+import KeyboardDetails from "./components/KeyboardDetails";
+import KeyboardEditForm from "./components/KeyboardEditForm";
+import KeyboardNewForm from "./components/KeyboardNewForm";
+import Keyboards from "./components/Keyboards";
+import NavigationBar from "./components/NavigationBar";
 
-console.log(API);
 function App() {
-  const [days, setDays] = useState([]);
-  useEffect(() => {
-    axios
-      .get(`${API}/test`)
-      .then(
-        (response) => {
-          setDays(response.data);
-        },
-        (error) => console.log("get", error)
-      )
-      .catch((c) => console.warn("catch", c));
-  }, []);
   return (
-    <div>
-      <ul>
-        {days.map((day) => (
-          <li key={day.name}>{day.name}</li>
-        ))}
-      </ul>
-    </div>
+    <Router>
+      <NavigationBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/keyboards" element={<Keyboards />} />
+        <Route path="/keyboards/:id" element={<KeyboardDetails />} />
+        <Route path="/keyboards/new" element={<KeyboardNewForm />} />
+        <Route path="/keyboards/:id/edit" element={<KeyboardEditForm />} />
+      </Routes>
+    </Router>
   );
 }
 
