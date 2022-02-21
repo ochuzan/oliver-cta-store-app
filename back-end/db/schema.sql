@@ -9,6 +9,7 @@ CREATE TABLE keyboards (
     id SERIAL PRIMARY KEY, 
     name TEXT,
     description TEXT,
+    image TEXT,
     price NUMERIC,
     rating NUMERIC,
     CHECK (rating >=0 AND rating <=5),
