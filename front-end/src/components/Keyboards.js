@@ -1,6 +1,30 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
+import Keyboard from "./Keyboard";
+
 function Keyboards() {
+    const [ keyboards, setKeyboards ] = useState([]);
+
+    const API = process.env.REACT_APP_API_URL;
+
+    useEffect(()=> {
+        axios.get(`${API}/keyboards`)
+            .then((res) => {
+                setKeyboards(res.data);
+            }).catch((error) => {
+                console.log(error);
+            })
+    }, [])
+
     return(
-        <div>Keyboards Page</div>
+        <div className="all-keyboards">
+            <h2>All Keyboards</h2>
+            <article>
+                {keyboards.map((keyboard) => {
+                    return <Keyboard key={keyboard.id} keyboard={keyboard} />
+                })}
+            </article>
+        </div>
     )
 }
 
