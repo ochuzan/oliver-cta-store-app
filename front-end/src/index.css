@@ -34,8 +34,22 @@ a:hover {
   margin: auto;
 }
 
-.all-keyboards article{
+.all-keyboards article {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
+}
+
+#product-page {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.product-details {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.css-1m4faer-MuiStack-root {
+  margin: 100px;
 }
