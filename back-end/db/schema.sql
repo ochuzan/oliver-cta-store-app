@@ -14,8 +14,8 @@ CREATE TABLE keyboards (
     rating NUMERIC,
     CHECK (rating >=0 AND rating <=5),
     featured BOOLEAN
+);
     -- color TEXT,
     -- layout TEXT,
     -- connectivity TEXT,
     -- winkeyless BOOLEAN,
-);
