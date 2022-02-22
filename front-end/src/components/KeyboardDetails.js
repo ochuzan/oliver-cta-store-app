@@ -33,15 +33,17 @@ function KeyboardDetails() {
     };
 
     return(
-        <div id="product-page">
-            <img src={keyboard.image} alt={keyboard.name} width="600px"/>
-            <div className="product-details">
-                <h3>{keyboard.name}</h3>
-                <h4>{keyboard.description}</h4>
-                <h4>${keyboard.price}</h4>
-                <h4>Rating: {keyboard.rating}</h4>
-                <div className="button-nav">
+        <div>
+            <h2>Keyboard Details</h2>
+            <div id="product-page">
+                <img src={keyboard.image} alt={keyboard.name} width="600px"/>
+                <div className="product-details">
+                    <h3>{keyboard.name}</h3>
+                    <h4>{keyboard.description}</h4>
+                    <h4>${keyboard.price}</h4>
+                    <h4>Rating: {keyboard.rating}</h4>
                     <Stack
+                        className="button-nav"
                         direction="row"
                         divider={<Divider orientation="vertical" flexItem />}
                         justifyContent="center"
@@ -61,7 +63,6 @@ function KeyboardDetails() {
                     </Stack>
                 </div>
             </div>
-
         </div>
     )
 }
