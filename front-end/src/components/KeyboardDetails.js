@@ -17,7 +17,6 @@ function KeyboardDetails() {
         axios.get(`${API}/keyboards/${id}`)
             .then((res) => {
                 setKeyboard(res.data);
-                console.log(res.data)
             }).catch((error) => {
                 console.log(error);
             })

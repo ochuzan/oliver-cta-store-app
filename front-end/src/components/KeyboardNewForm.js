@@ -34,11 +34,12 @@ function KeyboardNewForm() {
     };
 
     const handleTextChange = (event) => {
-        setKeyboard({...keyboard, [event.target.id]: event.target.value});
+        setKeyboard({ ...keyboard, [event.target.id]: event.target.value });
+        console.log(keyboard)
     };
 
     const handleCheckboxChange = () => {
-        setKeyboard({...keyboard, featured: !keyboard.featured});
+        setKeyboard({ ...keyboard, featured: !keyboard.featured });
     };
 
     const handleSubmit = (event) => {

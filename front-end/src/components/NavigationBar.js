@@ -115,6 +115,14 @@ const NavigationBar = () => {
                     Keyboards
                 </Button>
             </Link>
+            <Link to="/keyboards/new">
+                <Button
+                    onClick={handleCloseNavMenu}
+                    sx={{ my: 2, color: 'white', display: 'block' }}
+                >
+                    Request a Keyboard
+                </Button>
+            </Link>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
