@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('./assets/jan-loyde-cabrera-J3A5rtfHu0M-unsplash.jpg');
+  background-size: cover;
 }
 
 code {

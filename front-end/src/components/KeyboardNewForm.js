@@ -35,7 +35,6 @@ function KeyboardNewForm() {
 
     const handleTextChange = (event) => {
         setKeyboard({ ...keyboard, [event.target.id]: event.target.value });
-        console.log(keyboard)
     };
 
     const handleCheckboxChange = () => {
