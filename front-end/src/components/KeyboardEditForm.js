@@ -59,71 +59,98 @@ function KeyboardEditForm() {
 
     return(
         <div className="keyboard-edit-form">
-            <h2>Edit Keyboard</h2>
+            <div className="typewriter">
+                <h2>Edit Keyboard</h2>
+            </div>
             <Box
+                className="box"
                 component="form"
                 sx={{
                     '& .MuiTextField-root': { m: 1, width: '25ch' },
+                    bgcolor: 'azure',
                 }}
                 noValidate
                 autoComplete="off"
                 onSubmit={handleSubmit}
             >
-                <TextField
-                    required
-                    id="name"
-                    value={keyboard.name}
-                    label="Keyboard Name"
-                    onChange={handleTextChange}
-                />
-                <TextField
-                    required
-                    id="description"
-                    value={keyboard.description}
-                    label="Description"
-                    onChange={handleTextChange}
-                />
-                <TextField
-                    required
-                    id="image"
-                    value={keyboard.image}
-                    label="Image URL"
-                    onChange={handleTextChange}
-                />
-                <TextField
-                    required
-                    inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }}
-                    id="price"
-                    value={keyboard.price}
-                    label="Price"
-                    onChange={handleTextChange}
-                />
-                <TextField
-                    required
-                    inputProps={{ inputMode: 'numeric', pattern: '[0-5]*' }}
-                    id="rating"
-                    value={keyboard.rating}
-                    label="Rating"
-                    helperText="Rating of 0-5 only"
-                    onChange={handleTextChange}
-                />
-                 <FormGroup>
-                    <FormControlLabel 
-                        control={
-                            <Checkbox 
-                                id="featured"
-                                checked={keyboard.featured}
-                                onChange={handleCheckboxChange}
-                                label="Featured"
-                                icon={<FavoriteBorder />}
-                                checkedIcon={<Favorite />}
-                                />
-                            } 
-                        label="Featured" 
-                        labelPlacement="top"
+                <div>
+                    <TextField
+                        required
+                        id="name"
+                        value={keyboard.name}
+                        label="Keyboard Name"
+                        onChange={handleTextChange}
+                        variant="filled"
+                        color="primary"
+                        focused
                     />
-                </FormGroup>
-                <Button variant="contained" type="submit">Submit</Button>
+                    <TextField
+                        required
+                        id="description"
+                        value={keyboard.description}
+                        label="Description"
+                        onChange={handleTextChange}
+                        variant="filled"
+                        color="primary"
+                        focused
+                    />
+                </div>
+                <div>
+                    <TextField
+                        required
+                        id="image"
+                        value={keyboard.image}
+                        label="Image URL"
+                        onChange={handleTextChange}
+                        variant="filled"
+                        color="primary"
+                        focused
+                    />
+                    <TextField
+                        required
+                        inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }}
+                        id="price"
+                        value={keyboard.price}
+                        label="Price"
+                        onChange={handleTextChange}
+                        variant="filled"
+                        color="primary"
+                        focused
+                    />
+                </div>
+                <div>
+                    <TextField
+                        required
+                        inputProps={{ inputMode: 'numeric', pattern: '[0-5]*' }}
+                        id="rating"
+                        value={keyboard.rating}
+                        label="Rating"
+                        helperText="Rating of 0-5 only"
+                        onChange={handleTextChange}
+                        variant="filled"
+                        color="primary"
+                        focused
+                    />
+                </div>
+                <div>
+                    <FormGroup className="featured">
+                        <FormControlLabel 
+                            control={
+                                <Checkbox 
+                                    id="featured"
+                                    checked={keyboard.featured}
+                                    onChange={handleCheckboxChange}
+                                    label="Featured"
+                                    icon={<FavoriteBorder />}
+                                    checkedIcon={<Favorite />}
+                                    />
+                                } 
+                            label="Featured" 
+                            labelPlacement="top"
+                        />
+                    </FormGroup>
+                    <Button variant="contained" type="submit">Submit</Button>
+                </div>
             </Box>
         </div>
     )
