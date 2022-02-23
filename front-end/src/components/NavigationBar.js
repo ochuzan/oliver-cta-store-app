@@ -42,7 +42,8 @@ const NavigationBar = () => {
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Typography
-              variant="h6"
+              variant="h4"
+              className="logo"
               noWrap
               component="div"
               sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
@@ -92,7 +93,8 @@ const NavigationBar = () => {
               </Menu>
             </Box>
             <Typography
-              variant="h6"
+              variant="h4"
+              className="logo"
               noWrap
               component="div"
               sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}

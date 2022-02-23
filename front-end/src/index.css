@@ -14,9 +14,45 @@ code {
     monospace;
 }
 
-h2 {
-  text-align: center;
+/* .carousel-img {
+  width: 100px;
+} */
+
+.typewriter {
+  display: flex;
+  justify-content: center;
 }
+
+h2 {
+  color: mediumblue;
+  text-align: center;
+  background: rgba(164, 182, 242, 0.6);
+}
+
+.typewriter h2 {
+  overflow: hidden;
+  border-right: .15em solid rebeccapurple; 
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .10em;
+  animation: 
+    typing 2s steps(30, end),
+    blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 15% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: skyblue }
+}
+
+/* h2 {
+  text-align: center;
+} */
 
 a:link {
   text-decoration: none;

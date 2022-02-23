@@ -48,12 +48,15 @@ function KeyboardNewForm() {
 
     return(
         <div className="keyboard-new-form">
-            <h2>Request to Add a New Keyboard</h2>
+            <div className="typewriter">
+                <h2>Add a New Keyboard</h2>
+            </div>
             <Box
                 component="form"
-                sx={{
-                    '& .MuiTextField-root': { m: 1, width: '25ch' },
-                }}
+                // sx={{
+                //     '& .MuiTextField-root': { m: 1, width: '25ch' },
+                // }}
+                sx={{ display: 'flex', flexWrap: 'wrap' }}
                 noValidate
                 autoComplete="off"
                 onSubmit={handleSubmit}

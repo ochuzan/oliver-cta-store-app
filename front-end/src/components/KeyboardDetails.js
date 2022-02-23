@@ -33,7 +33,9 @@ function KeyboardDetails() {
 
     return(
         <div>
-            <h2>Keyboard Details</h2>
+            <div className="typewriter">
+                <h2>Keyboard Details</h2>
+            </div>
             <div id="product-page">
                 <img src={keyboard.image} alt={keyboard.name} width="600px"/>
                 <div className="product-details">

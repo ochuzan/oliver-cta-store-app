@@ -24,7 +24,9 @@ function Keyboards({ getCartItems }) {
 
     return(
         <div className="all-keyboards">
-            <h2>All Keyboards</h2>
+            <div className="typewriter">
+                <h2>All Keyboards</h2>
+            </div>
             <article>
                 {keyboards.map((keyboard) => {
                     return <Keyboard key={keyboard.id} keyboard={keyboard} handleAddToCart={handleAddToCart} />
