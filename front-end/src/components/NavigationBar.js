@@ -15,10 +15,9 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from "react-router-dom"
 
-// const pages = ['Products','Featured'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-const NavigationBar = () => {
+const NavigationBar = ({ cart }) => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -152,6 +151,9 @@ const NavigationBar = () => {
                 <Tooltip title="View Cart">
                   <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                   <ShoppingCartIcon fontSize='large'></ShoppingCartIcon>
+                  {
+                    cart.length>0 ? <Typography className='cart-notification'>{cart.length}</Typography>:null
+                  }
                     {/* <Avatar >Cart</Avatar> */}
                   </IconButton>
                 </Tooltip>

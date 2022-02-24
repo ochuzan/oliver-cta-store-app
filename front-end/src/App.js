@@ -17,7 +17,7 @@ function App() {
 
   return (
     <Router>
-      <NavigationBar />
+      <NavigationBar cart={cart}/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/keyboards" element={<Keyboards getCartItems={getCartItems} />} />
