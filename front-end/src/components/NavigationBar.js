@@ -17,7 +17,7 @@ import { Link } from "react-router-dom"
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-const NavigationBar = ({ cart }) => {
+const NavigationBar = ({ cart, toggleDrawer }) => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -147,9 +147,9 @@ const NavigationBar = ({ cart }) => {
                   </MenuItem>
                 ))}
               </Menu>
-              <Link to="/cart">
+              {/* <Link to="/cart"> */}
                 <Tooltip title="View Cart">
-                  <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                  <IconButton onClick={toggleDrawer(true)} sx={{ p: 0 }}>
                   <ShoppingCartIcon fontSize='large'></ShoppingCartIcon>
                   {
                     cart.length>0 ? <Typography className='cart-notification'>{cart.length}</Typography>:null
@@ -157,7 +157,7 @@ const NavigationBar = ({ cart }) => {
                     {/* <Avatar >Cart</Avatar> */}
                   </IconButton>
                 </Tooltip>
-              </Link>
+              {/* </Link> */}
             </Box>
           </Toolbar>
         </Container>

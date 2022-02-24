@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Keyboard from "./Keyboard";
 
-function Keyboards({ getCartItems }) {
+function Keyboards({ getCartItems, toggleCartDrawer }) {
     const [ keyboards, setKeyboards ] = useState([]);
 
     const API = process.env.REACT_APP_API_URL;
@@ -16,10 +16,10 @@ function Keyboards({ getCartItems }) {
             })
     }, [])
 
-    const handleAddToCart = (keyboard) => {
+    const handleAddToCart = (keyboard, open) => {
         // getCartItems(setCart([ ...cart, keyboard]));
         // getCartItems(cart);
-        getCartItems(keyboard);
+        getCartItems(keyboard, open);
     }
 
     return(
@@ -29,7 +29,7 @@ function Keyboards({ getCartItems }) {
             </div>
             <article>
                 {keyboards.map((keyboard) => {
-                    return <Keyboard key={keyboard.id} keyboard={keyboard} handleAddToCart={handleAddToCart} />
+                    return <Keyboard key={keyboard.id} keyboard={keyboard} handleAddToCart={handleAddToCart} toggleCartDrawer={toggleCartDrawer} />
                 })}
             </article>
         </div>

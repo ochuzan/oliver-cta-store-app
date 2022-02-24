@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import { Link } from "react-router-dom";
 
-function Keyboard({ keyboard, handleAddToCart }) {
+function Keyboard({ keyboard, handleAddToCart, toggleCartDrawer }) {
     const formatPrice = (price) => `$${Number(price).toFixed(2)}`;
 
     return(
@@ -38,7 +38,7 @@ function Keyboard({ keyboard, handleAddToCart }) {
                         Details
                     </Button>
                 </Link>
-                <Button size="small" color="primary" onClick={()=>handleAddToCart(keyboard)}>
+                <Button size="small" color="primary" onClick={()=>handleAddToCart(keyboard, true)}>
                         Add to Cart
                 </Button>
             </CardActions>
