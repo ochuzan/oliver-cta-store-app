@@ -15,7 +15,9 @@ function Cart({ cart }) {
     }
     return(
         <div>
-            <h2>Your Cart</h2>
+            <div className="typewriter">
+                <h2>Your Cart</h2>
+            </div>
             <ul>
                 {cartItems}
             </ul>

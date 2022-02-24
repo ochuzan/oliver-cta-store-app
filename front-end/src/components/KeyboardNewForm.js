@@ -56,7 +56,11 @@ function KeyboardNewForm() {
                 component="form"
                 sx={{
                     '& .MuiTextField-root': { m: 1, width: '25ch' },
-                    bgcolor: 'azure',
+                    bgcolor: 'rgba(240,248,255, .9)',
+                    border: 1,
+                    height: 350,
+                    borderRadius: 5,
+                    boxShadow: 10
                 }}
                 noValidate
                 autoComplete="off"
