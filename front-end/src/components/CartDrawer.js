@@ -16,32 +16,43 @@ function CartDrawer({ open, toggleDrawer, cart }) {
 
     let cartList = cart.map((item) => {
         return (
-            <>
-                <ListItem alignItems="flex-start">
-                    <ListItemAvatar>
-                        <Avatar alt={item.name} src={item.image} />
-                    </ListItemAvatar>
-                    <ListItemText
-                        primary={item.name}
-                        secondary={
-                        <React.Fragment>
-                            <Typography
-                            sx={{ display: 'inline' }}
-                            component="span"
-                            variant="body2"
-                            color="text.primary"
-                            >
-                            {formatPrice(item.price)} : {}
-                            </Typography>
-                            {item.description}
-                        </React.Fragment>
-                        }
-                    />
-                </ListItem>
+            <div key={item.id}>
+                <Link to={`/keyboards/${item.id}`} onClick={toggleDrawer(false)}>
+                    <ListItem  alignItems="flex-start">
+                        <ListItemAvatar>
+                            <Avatar alt={item.name} src={item.image} />
+                        </ListItemAvatar>
+                        <ListItemText
+                            primary={item.name}
+                            secondary={
+                            <React.Fragment>
+                                <Typography
+                                sx={{ display: 'inline' }}
+                                component="span"
+                                variant="body2"
+                                color="text.primary"
+                                >
+                                {formatPrice(item.price)} : {}
+                                </Typography>
+                                {item.description}
+                            </React.Fragment>
+                            }
+                        />
+                    </ListItem>
+                </Link>
                 <Divider variant="inset" component="li" />
-            </>
+            </div>
         )
     })
+
+    let subTotal;
+    if(cart.length > 0){
+        subTotal = cart.reduce((sum, { price }) => {
+            return sum + Number(price);
+        }, 0)
+    } else {
+        subTotal = 0
+    }
 
     return(
         <Drawer
@@ -50,17 +61,25 @@ function CartDrawer({ open, toggleDrawer, cart }) {
             variant="temporary"
             onClose={toggleDrawer(false)}
           >
-            <h2>Your Cart</h2>
+            <div className="typewriter">
+                <h2>Your Cart</h2>
+
+            </div>
             <Divider />
             <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
                 {cartList}
             </List>
-            <Link to="/cart">
+            <div className='cart-drawer-overview'>
+                <Divider />
+                <h3>Subtotal: {formatPrice(subTotal)} </h3>
+                <p>Taxes and shipping calculated at checkout</p>
                 <IconButton color="primary" component="span" onClick={toggleDrawer(false)}>
-                    <ShoppingCartCheckoutRoundedIcon></ShoppingCartCheckoutRoundedIcon>
-                    <Typography sx={{ display: 'inline', textAlign: 'center' }}>Check Out</Typography>
+                    <Link to="/cart">
+                        <ShoppingCartCheckoutRoundedIcon></ShoppingCartCheckoutRoundedIcon>
+                        <Typography sx={{ display: 'inline', textAlign: 'center' }}>Check Out</Typography>
+                    </Link>
                 </IconButton>
-            </Link>
+            </div>
           </Drawer>
     )
 }
