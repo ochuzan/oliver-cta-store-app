@@ -122,7 +122,8 @@ const NavigationBar = ({ cart, toggleDrawer }) => {
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar sx={{ bgcolor: deepPurple[500] }}>OC</Avatar>
+                  {/* <Avatar sx={{ bgcolor: deepPurple[500] }}>OC</Avatar> */}
+                  <Avatar src="https://image.pngaaa.com/45/5937045-middle.png" alt="bongo cat">OC</Avatar>
                 </IconButton>
               </Tooltip>
               <Menu
