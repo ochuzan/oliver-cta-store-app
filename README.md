@@ -1,3 +1,9 @@
+## Front-end URL
+https://slappinkeys.netlify.app/
+
+## Back-end URL
+https://oc-cta-store-app-be.herokuapp.com/
+
 # PERN Final Project Template
 
 - select `use this template`
